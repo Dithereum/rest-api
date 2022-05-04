@@ -3,8 +3,7 @@ const http = require('http');
 const querystring = require('querystring');
 const mysql = require('mysql');
 const util = require('util');
-
-
+const cors = require('http-cors').setup({origin:'dithereum.io'});
 
 var DB_CONFIG = {
 		host: "localhost",
@@ -40,6 +39,7 @@ Error:    {"result":"error", "data":"Error occured"}
 
 http.createServer(function (req, res) {
 
+if(cors(req,res)) return
 
 async function execute(){
 
