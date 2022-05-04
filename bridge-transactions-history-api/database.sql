@@ -51,8 +51,6 @@ CREATE TABLE `bridge_transactions` (
 INSERT INTO `bridge_transactions` (`id`, `userWallet`, `orderID`, `fromChain`, `fromCurrency`, `fromTxnHash`, `fromAmount`, `toChain`, `toCurrency`, `toTxnHash`, `toAmount`, `txnFee`, `status`) VALUES
 (1, '0x2B2E666e1D211e22a1Ca8a66147da16Fd6C0fc9E', 1, 126, 'BNB', '0x38cf54af596b7179c1219030d9d3d07be7deda1e85e73fe6dbb42b09d20b3a14', 0.0123, 24, 'BNB', '0x38cf54af596b7179c1219030d9d3d07be7deda1e85e73fe6dbb42b09d20b3a14', 0.0123, 0, 'Pending'),
 (2, '0x2B2E666e1D211e22a1Ca8a66147da16Fd6C0fc9E', 1, 100, 'USDT', '0x38cf54af596b7179c1219030d9d3d07be7deda1e85e73fe6dbb42b09d20b3a14', 111.5, 24, 'DUSD', '0x38cf54af596b7179c1219030d9d3d07be7deda1e85e73fe6dbb42b09d20b3a14', 111.5, 0, 'Pending'),
-(3, '+.fn!\"¡ÊŠf}¡oÖÀüž', 4, 56, 'BNB', '„j\\-#éçnÉàík‰»$þ¢¸dF§\'w\r*½‰¨ê\'', 1250000, 0, '', '', 0, 0, 'Pending'),
-(4, '+.fn!\"¡ÊŠf}¡oÖÀüž', 5, 56, 'BNB', 's”Ò~àøOÑí®š?\Z”ìµîFß:IØ91›º¤=@', 55555600, 0, '', '', 0, 0, 'Pending'),
 (5, '0x2B2E666e1D211e22a1Ca8a66147da16Fd6C0fc9E', 4, 56, 'BNB', '0x846a5c812d23e9e76ec9e0ed6b89bb1424fea2b86446a727770d2abd89a8ea27', 1250000, 0, '', '', 0, 0, 'Pending'),
 (6, '0x2B2E666e1D211e22a1Ca8a66147da16Fd6C0fc9E', 5, 56, 'BNB', '0x7394d27ee0f84f1cd111edae119a3f1a94ecb5ee46df3a49d839319bbaa43d40', 55555600, 0, '', '', 0, 0, 'Pending'),
 (7, '0x2B2E666e1D211e22a1Ca8a66147da16Fd6C0fc9E', 4, 56, 'BNB', '0x846a5c812d23e9e76ec9e0ed6b89bb1424fea2b86446a727770d2abd89a8ea27', 1250000, 24, 'BNB', '', 0, 0, 'Pending'),
@@ -96,7 +94,9 @@ CREATE TABLE `lastblock` (
   `dithereum` int(11) NOT NULL,
   `hecochain` int(11) NOT NULL,
   `polygon` int(11) NOT NULL,
-  `ethereum` int(11) NOT NULL
+  `ethereum` int(11) NOT NULL,
+  `rinkeby` int(11) NOT NULL,
+  `trx` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
