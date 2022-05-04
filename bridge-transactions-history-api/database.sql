@@ -103,8 +103,8 @@ CREATE TABLE `lastblock` (
 -- Dumping data for table `lastblock`
 --
 
-INSERT INTO `lastblock` (`id`, `bsc`, `dithereum`, `hecochain`, `polygon`, `ethereum`) VALUES
-(14876897, 0, 177479, 0, 0, 0);
+INSERT INTO `lastblock` (`id`, `bsc`, `dithereum`, `hecochain`, `polygon`, `ethereum`, `rinkeby`, `trx`) VALUES
+(14876897, 0, 177479, 0, 0, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
