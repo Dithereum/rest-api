@@ -34,7 +34,8 @@ async function getdata(){
 			var vperc = vpower/100;
 			rows3[i].votingpower =  vpower.toString() +" / "+vperc.toString() +"%";
 			rows3[i].validatorCommission = rows3[i].validatorCommission + " %";
-			rows3[i].validatorAPR = rows3[i].validatorAPR  +" %";
+			//APR logic is not ready yet
+			//rows3[i].validatorAPR = rows3[i].validatorAPR  +" %";
 			i++;
 		});
 
