@@ -3,8 +3,7 @@ const http = require('http');
 const querystring = require('querystring');
 const mysql = require('mysql');
 const util = require('util');
-
-
+var Web3 = require('web3');
 
 var DB_CONFIG = {
 		host: "localhost",
@@ -15,25 +14,17 @@ var DB_CONFIG = {
 		port: 3306
 };
 
-
-
 /*===========================================================
 //=================  REQUEST AND RESPONSE  ==================
 //===========================================================
 
 API Endpoint URL:  http://localhost:8081?user=userWallet
 
-
-
-
-
 Response JSON Structure:
 
 Success:  {"result":"success", "data":"{JSON_FOR_DATA}"}
 
 Error:    {"result":"error", "data":"Error occured"}
-
-
 */
 
 
@@ -54,10 +45,11 @@ async function execute(){
 		
 		console.log(myAccountAddress);
 			
-		
-		
+		var infuraURL = 'https://2Dnc0OuWUcXJVzXZe0R1c2oSlq4:0a89c54da715834ac477205c9b18f218@eth2-beacon-mainnet.infura.io';
+		//web3.utils.isAddress('0xc1912fee45d61c87cc5ea59dae31190fffff232d'); returns true or false
+		var web3 = new Web3(new Web3.providers.HttpProvider(infuraURL));
 
-		if(typeof qs.user !== 'undefined' && myAccountAddress.length == 42 && myAccountAddress !== undefined){
+		if((typeof qs.user !== 'undefined') && (myAccountAddress.length == 42) && (myAccountAddress !== undefined) && (web3.utils.isAddress(myAccountAddress))){
 			
 			//sanitize input value by removing all the special characters.
 			myAccountAddress = myAccountAddress.replace(/[^a-zA-Z0-9]/g, '');
