@@ -29,7 +29,9 @@ async function getdata(walletid){
 		var query1 = "SELECT `stakerAddress`, `validatorAddress`, `stakeAmount`, `timeStamp`, `status`, `transHash` FROM `stakings` AS `staking` WHERE `staking`.`stakerAddress` ='"+walletid+"'";
                 const [rows1, fields1] = await connection.execute(query1);
 
-		var rows = {"staking": rows1}
+		var rows = {"staking": rows1};
+		console.log(" >>> closing  mysql connection >>>, staking_api3 >>>");
+                connection.end();
 		return rows;
 	}catch(e){
 		console.log(">>>>EEEEEEE>>>>",e);
