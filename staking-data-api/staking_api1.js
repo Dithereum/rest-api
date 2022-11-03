@@ -43,6 +43,8 @@ async function getdata(){
 		rows["activeValidators"] = rows1.length;
 		rows["bonded_tokens"] =  parseInt(rows2[0].sum_selfstake) + parseInt(rows2[0].sum_deligatorstake);
 		rows["validators_list"] = rows3;
+		console.log(" >>> closing  mysql connection >>>, staking_api1 >>>");
+                connection.end();
 		return rows;
 	}catch(e){
 		console.log(">>>>EEEEEEE>>>>",e);
