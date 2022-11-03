@@ -42,6 +42,8 @@ async function getdata(walletid){
 		rows.left_panel = [];
 		rows.left_panel.push(rows3);
 		rows.left_panel.push({"total_delegators": total_delegators}); 
+		console.log(" >>> closing  mysql connection >>>, staking_api2 >>>");
+                connection.end();
 		return rows;
 	}catch(e){
 		console.log(">>>>EEEEEEE>>>>",e);
